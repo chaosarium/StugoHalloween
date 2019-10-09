@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Halloween Signup</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a href="/">back</a>
+  <h1>Signup</h1>
+  <form action="/signup" method="POST">
+    <label for="time">Time</label>
+    <select name="time" id="time">
+        <option value="19:00-19:15" <% if (timeSelect == 1) { %>selected <%}%>> 19:00-19:15 (<%= T1Count %>/15)</option>
+        <option value="19:15-19:30" <% if (timeSelect == 2) { %>selected <%}%>> 19:15-19:30 (<%= T2Count %>/15)</option>
+        <option value="19:30-19:45" <% if (timeSelect == 3) { %>selected <%}%>> 19:30-19:45 (<%= T3Count %>/15)</option>
+        <option value="19:45-20:00" <% if (timeSelect == 4) { %>selected <%}%>> 19:45-20:00 (<%= T4Count %>/15)</option>
+        <option value="20:00-20:15" <% if (timeSelect == 5) { %>selected <%}%>> 20:00-20:15 (<%= T5Count %>/15)</option>
+        <option value="20:15-20:30" <% if (timeSelect == 6) { %>selected <%}%>> 20:15-20:30 (<%= T6Count %>/15)</option>
+    </select>
+    <br>
+    <label for="firstName">First Name</label>
+    <input type="text" name="firstName" id="firstName">
+    <br>
+    <label for="lastName">Last Name</label>
+    <input type="text" name="lastName" id="lastName">
+    <br>
+    <label for="year">Year</label>
+    <select name="year" id="year">
+        <option selected>Select your year level...</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+    </select>
+    <br>
+    <label for="studentID">Student ID</label>
+    <input type="text" name="studentID" id="studentID">
+    <br>
+    <input type="checkbox" name="agree" id="agree" value="agree" required>I agree that ...
+    <br>
+    <input type="submit">
+  </form>
+
+  <br>
+  <p>Please scan and pay before submitting the form</p>
+  <img src="/pay.PNG" alt="Payment Code" style="width: 250px">
+</body>
+</html>

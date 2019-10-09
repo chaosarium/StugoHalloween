@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Halloween Signup</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <a href="/">back</a>
+
+  <h1>Halloween Signup Data Panel</h1>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="3">19:00-19:15</th>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <th>Student ID</th>
+        <th>Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (var i = 0; i < dataList.length; i++) { %>
+        <% if (dataList[i].Time == "19:00-19:15") { %>
+          <tr>
+            <td><%= dataList[i].FirstName + " " + dataList[i].LastName %></td>
+            <td><%= dataList[i].StudentID %></td>
+            <td><%= dataList[i].Year %></td>
+          </tr>
+      <% } %>
+      <% } %>
+
+      <% for (var i = 0; i < maxPopulation - T1Count; i++) { %>
+          <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+      <% } %>
+    </tbody>
+  </table>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="3">19:15-19:30</th>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <th>Student ID</th>
+        <th>Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (var i = 0; i < dataList.length; i++) { %>
+        <% if (dataList[i].Time == "19:15-19:30") { %>
+          <tr>
+            <td><%= dataList[i].FirstName + " " + dataList[i].LastName %></td>
+            <td><%= dataList[i].StudentID %></td>
+            <td><%= dataList[i].Year %></td>
+          </tr>
+      <% } %>
+      <% } %>
+
+      <% for (var i = 0; i < maxPopulation - T2Count; i++) { %>
+        <tr>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+     <% } %>
+    </tbody>
+  </table>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="3">19:30-19:45</th>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <th>Student ID</th>
+        <th>Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (var i = 0; i < dataList.length; i++) { %>
+        <% if (dataList[i].Time == "19:30-19:45") { %>
+          <tr>
+            <td><%= dataList[i].FirstName + " " + dataList[i].LastName %></td>
+            <td><%= dataList[i].StudentID %></td>
+            <td><%= dataList[i].Year %></td>
+          </tr>
+      <% } %>
+      <% } %>
+
+      <% for (var i = 0; i < maxPopulation - T3Count; i++) { %>
+        <tr>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="3">19:45-20:00</th>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <th>Student ID</th>
+        <th>Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (var i = 0; i < dataList.length; i++) { %>
+        <% if (dataList[i].Time == "19:45-20:00") { %>
+          <tr>
+            <td><%= dataList[i].FirstName + " " + dataList[i].LastName %></td>
+            <td><%= dataList[i].StudentID %></td>
+            <td><%= dataList[i].Year %></td>
+          </tr>
+      <% } %>
+      <% } %>
+
+      <% for (var i = 0; i < maxPopulation - T4Count; i++) { %>
+        <tr>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="3">20:00-20:15</th>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <th>Student ID</th>
+        <th>Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (var i = 0; i < dataList.length; i++) { %>
+        <% if (dataList[i].Time == "20:00-20:15") { %>
+          <tr>
+            <td><%= dataList[i].FirstName + " " + dataList[i].LastName %></td>
+            <td><%= dataList[i].StudentID %></td>
+            <td><%= dataList[i].Year %></td>
+          </tr>
+      <% } %>
+      <% } %>
+
+      <% for (var i = 0; i < maxPopulation - T5Count; i++) { %>
+        <tr>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+     <% } %>
+    </tbody>
+  </table>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="3">20:15-20:30</th>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <th>Student ID</th>
+        <th>Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (var i = 0; i < dataList.length; i++) { %>
+        <% if (dataList[i].Time == "20:15-20:30") { %>
+          <tr>
+            <td><%= dataList[i].FirstName + " " + dataList[i].LastName %></td>
+            <td><%= dataList[i].StudentID %></td>
+            <td><%= dataList[i].Year %></td>
+          </tr>
+      <% } %>
+      <% } %>
+
+      <% for (var i = 0; i < maxPopulation - T6Count; i++) { %>
+        <tr>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+
+</body>
+</html>
