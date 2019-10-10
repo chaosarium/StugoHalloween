@@ -5,3 +5,7 @@ body {
 table, th, td {
   border: 1px solid black;
 }
+
+input[type="text"], input[type="password"] {
+  width: 200px;
+}

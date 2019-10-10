@@ -9,15 +9,14 @@
 </head>
 <body>
   <a href="/data">back</a>
-  <h1>Cancel Operation</h1>
-  <form action="/cancel" method="POST">
-    <label for="studentID">Student ID</label>
-    <input type="text" name="studentID" id="studentID" placeholder="student ID to cancel">
-    <br>
+  <h1>Erase Data</h1>
+  <form action="/erase" method="POST">
     <label for="operationPassword">Operation Password</label>
-    <input type="text" name="operationPassword" id="operationPassword" placeholder="operation password">
+    <input type="password" name="operationPassword" id="operationPassword" placeholder="operation password">
     <br>
-
+    <label for="varificationQuestion">Varification Question</label>
+    <input type="text" name="varificationQuestion" id="varificationQuestion" placeholder="2, 3, 5, 7, 11, 13, what's next">
+    <br>
     <input type="checkbox" name="agree" id="agree" value="agree" required>I know what I am doing
     <br>
     <input type="submit">

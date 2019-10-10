@@ -10,6 +10,11 @@ const crypto = require("crypto");
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static("public"));
 app.set("view engine", "ejs");
+//disable caching
+app.use((req, res, next) => {
+  res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private')
+  next()
+})
 
 
 //=================
@@ -60,6 +65,21 @@ function dbRemove(studentID) {
 	});
 };
 
+//Remove all function
+function dbRemoveAll() {
+  MongoClient.connect(url, function(err, db) {
+    if (err) console.log(err);
+    var dbo = db.db(dbName);
+    
+    //remove document
+		dbo.collection("studentRecords").remove({}, function(err, result) {
+			if (err) console.log(err);
+			console.log("Removed all");
+			db.close();
+		});
+	});
+};
+
 //========================
 //====Request Handling====
 //========================
@@ -99,7 +119,7 @@ app.get("/", function(req, res){
       }
       console.log("count result: " + "|" + T1Count + "|" + T2Count + "|" + T3Count + "|" + T4Count + "|" + T5Count + "|" + T6Count + "|")
       db.close()   
-      res.render('index', {T1Count: T1Count, T2Count: T2Count, T3Count: T3Count, T4Count: T4Count, T5Count: T5Count, T6Count: T6Count, maxPopulation: maxPopulation})
+      res.render('index', {T1Count: T1Count, T2Count: T2Count, T3Count: T3Count, T4Count: T4Count, T5Count: T5Count, T6Count: T6Count, maxPopulation: maxPopulation});
 		})
   })
 });
@@ -193,6 +213,11 @@ app.get("/cancel", function(req, res){
   res.render('cancel');
 });
 
+//Erase Page
+app.get("/erase", function(req, res){
+  res.render('erase');
+});
+
 //Signup POST
 app.post("/signup", function(req, res){
   console.log("sugnup post request recieved")
@@ -234,7 +259,7 @@ app.post("/signup", function(req, res){
   });
 
   //response
-  res.send("post done");
+  res.render("signuped", {time: time, firstName: firstName, lastName: lastName, year: year, studentID: studentID});
 });
 
 //Cancel POST
@@ -268,6 +293,24 @@ app.post("/cancel", function(req, res){
   }
 });
 
+//Erase POST
+app.post("/erase", function(req, res){
+  console.log("erase post request recieved")
+  //get post info
+  var operationPassword = req.body.operationPassword
+  var varificationQuestion = req.body.varificationQuestion
+  console.log("request info: " + "|" + operationPassword + "|" + varificationQuestion + "|");
+  
+  //check password
+  if (crypto.createHmac('sha256', operationPassword).digest('hex') == operationPasswordHash && varificationQuestion == 17) {
+    dbRemoveAll();
+    res.send("correct password, correct varification, operation successful")
+  }
+  else {
+    res.send("wrong password or varification question, try again");
+  }
+});
+
 //Listen
 app.listen(port, function(){
   console.log("app started on port" + port);
@@ -281,3 +324,4 @@ app.listen(port, function(){
 // dbInsert("07:00-08:00", "Leon", "Lu", "10", "2220067");
 // dbRemove("2220067");
 // console.log(dbCheck("124543"))
+// dbRemoveAll()
