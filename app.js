@@ -124,10 +124,51 @@ app.get("/", function(req, res){
   })
 });
 
-//Signup Page
+//Signup Page 1
 app.get("/signup/:timeSelect", function(req, res){
   var timeSelect = req.params.timeSelect;
   console.log("selected time is " + timeSelect)
+  var T1Count = 0
+  var T2Count = 0
+  var T3Count = 0
+  var T4Count = 0
+  var T5Count = 0
+  var T6Count = 0
+  
+	MongoClient.connect(url, function(err, db) {
+		if (err) throw err
+		var dbo = db.db(dbName)
+		dbo.collection("studentRecords").find({}).toArray(function(err, result) {
+			if (err) throw err
+			for (var i = 0; i < result.length; i++) {
+				if (result[i].Time == "19:00-19:15") {
+          T1Count++
+        }
+				if (result[i].Time == "19:15-19:30") {
+          T2Count++
+        }
+        if (result[i].Time == "19:30-19:45") {
+          T3Count++
+        }
+        if (result[i].Time == "19:45-20:00") {
+          T4Count++
+        }
+        if (result[i].Time == "20:00-20:15") {
+          T5Count++
+        }
+        if (result[i].Time == "20:15-20:30") {
+          T6Count++
+        }
+      }
+      console.log("count result: " + "|" + T1Count + "|" + T2Count + "|" + T3Count + "|" + T4Count + "|" + T5Count + "|" + T6Count + "|")
+      db.close()   
+      res.render('signup', {T1Count: T1Count, T2Count: T2Count, T3Count: T3Count, T4Count: T4Count, T5Count: T5Count, T6Count: T6Count, timeSelect: timeSelect, maxPopulation: maxPopulation})
+		})
+  })
+});
+//Signup Page 2
+app.get("/signup", function(req, res){
+  var timeSelect = 0;
   var T1Count = 0
   var T2Count = 0
   var T3Count = 0
@@ -250,16 +291,15 @@ app.post("/signup", function(req, res){
         //add entry to database
         console.log("Availabiligy check passed, adding to database")
         dbInsert(time, firstName, lastName, year, studentID);
+        res.render("signuped", {time: time, firstName: firstName, lastName: lastName, year: year, studentID: studentID});
       }
       else{
         console.log("OOPS, ERROR, too many sign-ups")
         //Some Error Reporting Machanism
+        res.render("info", {location: "index", infoTitle: "ERROR", infoMessage: "The selected time period is full, please select a different time and signup again. You don't need to pay again."})
       }
 		});
   });
-
-  //response
-  res.render("signuped", {time: time, firstName: firstName, lastName: lastName, year: year, studentID: studentID});
 });
 
 //Cancel POST
@@ -280,17 +320,16 @@ app.post("/cancel", function(req, res){
           if (err) throw err
           if (result.length > 0) {
             dbRemove(studentID);
-            res.send("correct password, student ID valid, operation sucessful, " + studentID + " has been removed")
+            res.render("info", {location: "data", infoTitle: "Operation Successful", infoMessage: "One occurance of " + studentID + " has been removed from the list"})
           }
           else {
-            res.send("student ID not available, try again")
+            res.render("info", {location: "cancel", infoTitle: "ERROR", infoMessage: "The requested student ID is invalid, pleas try again."})
           }
         });
       });
   }
   else {
-    res.send("wrong password, try again");
-  }
+    res.render("info", {location: "cancel", infoTitle: "ERROR", infoMessage: "Wrong operation password, please try again"})  }
 });
 
 //Erase POST
@@ -304,10 +343,10 @@ app.post("/erase", function(req, res){
   //check password
   if (crypto.createHmac('sha256', operationPassword).digest('hex') == operationPasswordHash && varificationQuestion == 17) {
     dbRemoveAll();
-    res.send("correct password, correct varification, operation successful")
+    res.render("info", {location: "data", infoTitle: "Operation Successful", infoMessage: "All information has been erased."})
   }
   else {
-    res.send("wrong password or varification question, try again");
+    res.render("info", {location: "erase", infoTitle: "ERROR", infoMessage: "Wrong operation password or varification question answer, please try again."})
   }
 });
 

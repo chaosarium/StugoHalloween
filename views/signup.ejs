@@ -13,12 +13,13 @@
   <form action="/signup" method="POST">
     <label for="time">Time</label>
     <select name="time" id="time">
-        <option value="19:00-19:15" <% if (timeSelect == 1) { %>selected <%}%>> 19:00-19:15 (<%= T1Count %>/<%= maxPopulation %>)</option>
-        <option value="19:15-19:30" <% if (timeSelect == 2) { %>selected <%}%>> 19:15-19:30 (<%= T2Count %>/<%= maxPopulation %>)</option>
-        <option value="19:30-19:45" <% if (timeSelect == 3) { %>selected <%}%>> 19:30-19:45 (<%= T3Count %>/<%= maxPopulation %>)</option>
-        <option value="19:45-20:00" <% if (timeSelect == 4) { %>selected <%}%>> 19:45-20:00 (<%= T4Count %>/<%= maxPopulation %>)</option>
-        <option value="20:00-20:15" <% if (timeSelect == 5) { %>selected <%}%>> 20:00-20:15 (<%= T5Count %>/<%= maxPopulation %>)</option>
-        <option value="20:15-20:30" <% if (timeSelect == 6) { %>selected <%}%>> 20:15-20:30 (<%= T6Count %>/<%= maxPopulation %>)</option>
+        <option value="unspecified" <% if (timeSelect == 0) { %>selected <%}%> disabled>Select your desired time</option>
+        <option value="19:00-19:15" <% if (timeSelect == 1) { %>selected <%}%> <% if (T1Count >= maxPopulation) { %> disabled <%}%>> 19:00-19:15 (<%= T1Count %>/<%= maxPopulation %>)</option>
+        <option value="19:15-19:30" <% if (timeSelect == 2) { %>selected <%}%> <% if (T2Count >= maxPopulation) { %> disabled <%}%>> 19:15-19:30 (<%= T2Count %>/<%= maxPopulation %>)</option>
+        <option value="19:30-19:45" <% if (timeSelect == 3) { %>selected <%}%> <% if (T3Count >= maxPopulation) { %> disabled <%}%>> 19:30-19:45 (<%= T3Count %>/<%= maxPopulation %>)</option>
+        <option value="19:45-20:00" <% if (timeSelect == 4) { %>selected <%}%> <% if (T4Count >= maxPopulation) { %> disabled <%}%>> 19:45-20:00 (<%= T4Count %>/<%= maxPopulation %>)</option>
+        <option value="20:00-20:15" <% if (timeSelect == 5) { %>selected <%}%> <% if (T5Count >= maxPopulation) { %> disabled <%}%>> 20:00-20:15 (<%= T5Count %>/<%= maxPopulation %>)</option>
+        <option value="20:15-20:30" <% if (timeSelect == 6) { %>selected <%}%> <% if (T6Count >= maxPopulation) { %> disabled <%}%>> 20:15-20:30 (<%= T6Count %>/<%= maxPopulation %>)</option>
     </select>
     <br>
     <label for="firstName">First Name</label>
