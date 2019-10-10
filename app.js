@@ -60,7 +60,6 @@ function dbRemove(studentID) {
 	});
 };
 
-
 //========================
 //====Request Handling====
 //========================
@@ -189,6 +188,11 @@ app.get("/data", function(req, res){
   })
 });
 
+//Cancel Page
+app.get("/cancel", function(req, res){
+  res.render('cancel');
+});
+
 //Signup POST
 app.post("/signup", function(req, res){
   console.log("sugnup post request recieved")
@@ -233,6 +237,38 @@ app.post("/signup", function(req, res){
   res.send("post done");
 });
 
+//Cancel POST
+app.post("/cancel", function(req, res){
+  console.log("cancel post request recieved")
+  //get post info
+  var studentID = req.body.studentID
+  var operationPassword = req.body.operationPassword
+  console.log("request info: " + "|" + studentID + "|" + operationPassword + "|");
+  
+  //check password
+  if (crypto.createHmac('sha256', operationPassword).digest('hex') == operationPasswordHash) {
+    //Check ID availability
+      MongoClient.connect(url, function(err, db) {
+        if (err) throw err
+        var dbo = db.db(dbName)
+        dbo.collection("studentRecords").find({StudentID: studentID}).toArray(function(err, result) {
+          if (err) throw err
+          if (result.length > 0) {
+            dbRemove(studentID);
+            res.send("correct password, student ID valid, operation sucessful, " + studentID + " has been removed")
+          }
+          else {
+            res.send("student ID not available, try again")
+          }
+        });
+      });
+  }
+  else {
+    res.send("wrong password, try again");
+  }
+});
+
+//Listen
 app.listen(port, function(){
   console.log("app started on port" + port);
 });
@@ -244,3 +280,4 @@ app.listen(port, function(){
 // console.log(crypto.createHmac('sha256', "string").digest('hex'));
 // dbInsert("07:00-08:00", "Leon", "Lu", "10", "2220067");
 // dbRemove("2220067");
+// console.log(dbCheck("124543"))
