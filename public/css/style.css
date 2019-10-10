@@ -9,3 +9,7 @@ table, th, td {
 input[type="text"], input[type="password"] {
   width: 200px;
 }
+
+.disabled-link {
+  cursor: not-allowed;
+}

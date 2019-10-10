@@ -287,7 +287,7 @@ app.post("/signup", function(req, res){
       db.close()
       
       //control flow
-      if (availabilityCount < 15) {
+      if (availabilityCount < maxPopulation) {
         //add entry to database
         console.log("Availabiligy check passed, adding to database")
         dbInsert(time, firstName, lastName, year, studentID);
