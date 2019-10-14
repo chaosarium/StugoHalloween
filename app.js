@@ -120,6 +120,7 @@ app.get("/", function(req, res){
       console.log("count result: " + "|" + T1Count + "|" + T2Count + "|" + T3Count + "|" + T4Count + "|" + T5Count + "|" + T6Count + "|")
       db.close()   
       res.render('index', {T1Count: T1Count, T2Count: T2Count, T3Count: T3Count, T4Count: T4Count, T5Count: T5Count, T6Count: T6Count, maxPopulation: maxPopulation});
+
 		})
   })
 });
