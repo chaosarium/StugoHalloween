@@ -25,7 +25,7 @@ const url = "mongodb://localhost:27017";
 const dbName = "Stugo_Halloween_Signup";
 
 const operationPasswordHash = "ac1082fe70f1a1ec37cb54a3038e8b45dd5f242800eb8415eeaa06e85869d3a6";
-const maxPopulation = 15
+const maxPopulation = 20
 
 
 //=================
@@ -98,22 +98,22 @@ app.get("/", function(req, res){
 		dbo.collection("studentRecords").find({}).toArray(function(err, result) {
 			if (err) throw err
 			for (var i = 0; i < result.length; i++) {
-				if (result[i].Time == "19:00-19:15") {
+				if (result[i].Time == "19:00-19:10") {
           T1Count++
         }
-				if (result[i].Time == "19:15-19:30") {
+				if (result[i].Time == "19:10-19:20") {
           T2Count++
         }
-        if (result[i].Time == "19:30-19:45") {
+        if (result[i].Time == "19:20-19:30") {
           T3Count++
         }
-        if (result[i].Time == "19:45-20:00") {
+        if (result[i].Time == "19:35-19:45") {
           T4Count++
         }
-        if (result[i].Time == "20:00-20:15") {
+        if (result[i].Time == "19:45-19:55") {
           T5Count++
         }
-        if (result[i].Time == "20:15-20:30") {
+        if (result[i].Time == "19:55-20:05") {
           T6Count++
         }
       }
@@ -141,22 +141,22 @@ app.get("/signup/:timeSelect", function(req, res){
 		dbo.collection("studentRecords").find({}).toArray(function(err, result) {
 			if (err) throw err
 			for (var i = 0; i < result.length; i++) {
-				if (result[i].Time == "19:00-19:15") {
+				if (result[i].Time == "19:00-19:10") {
           T1Count++
         }
-				if (result[i].Time == "19:15-19:30") {
+				if (result[i].Time == "19:10-19:20") {
           T2Count++
         }
-        if (result[i].Time == "19:30-19:45") {
+        if (result[i].Time == "19:20-19:30") {
           T3Count++
         }
-        if (result[i].Time == "19:45-20:00") {
+        if (result[i].Time == "19:35-19:45") {
           T4Count++
         }
-        if (result[i].Time == "20:00-20:15") {
+        if (result[i].Time == "19:45-19:55") {
           T5Count++
         }
-        if (result[i].Time == "20:15-20:30") {
+        if (result[i].Time == "19:55-20:05") {
           T6Count++
         }
       }
@@ -182,22 +182,22 @@ app.get("/signup", function(req, res){
 		dbo.collection("studentRecords").find({}).toArray(function(err, result) {
 			if (err) throw err
 			for (var i = 0; i < result.length; i++) {
-				if (result[i].Time == "19:00-19:15") {
+				if (result[i].Time == "19:00-19:10") {
           T1Count++
         }
-				if (result[i].Time == "19:15-19:30") {
+				if (result[i].Time == "19:10-19:20") {
           T2Count++
         }
-        if (result[i].Time == "19:30-19:45") {
+        if (result[i].Time == "19:20-19:30") {
           T3Count++
         }
-        if (result[i].Time == "19:45-20:00") {
+        if (result[i].Time == "19:35-19:45") {
           T4Count++
         }
-        if (result[i].Time == "20:00-20:15") {
+        if (result[i].Time == "19:45-19:55") {
           T5Count++
         }
-        if (result[i].Time == "20:15-20:30") {
+        if (result[i].Time == "19:55-20:05") {
           T6Count++
         }
       }
@@ -223,22 +223,22 @@ app.get("/data", function(req, res){
 		dbo.collection("studentRecords").find({}).toArray(function(err, result) {
 			if (err) throw err
       for (var i = 0; i < result.length; i++) {
-				if (result[i].Time == "19:00-19:15") {
+				if (result[i].Time == "19:00-19:10") {
           T1Count++
         }
-				if (result[i].Time == "19:15-19:30") {
+				if (result[i].Time == "19:10-19:20") {
           T2Count++
         }
-        if (result[i].Time == "19:30-19:45") {
+        if (result[i].Time == "19:20-19:30") {
           T3Count++
         }
-        if (result[i].Time == "19:45-20:00") {
+        if (result[i].Time == "19:35-19:45") {
           T4Count++
         }
-        if (result[i].Time == "20:00-20:15") {
+        if (result[i].Time == "19:45-19:55") {
           T5Count++
         }
-        if (result[i].Time == "20:15-20:30") {
+        if (result[i].Time == "19:55-20:05") {
           T6Count++
         }
       }
