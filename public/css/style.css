@@ -1,11 +1,9 @@
-body {
-  background-color: aliceblue;
-}
-
 table,
 th,
 td {
-  border: 1px solid black;
+  /* border: 1px solid rgb(211, 211, 211); */
+  color: rgb(211, 211, 211);
+  background-color: rgba(98, 98, 98, 0.1);
 }
 /* 
 input[type="text"],
@@ -125,4 +123,8 @@ label.btn input[type="checkbox"].filled-in:checked + label:after {
   -webkit-box-shadow: 0 1px 0 0 #f48942 !important;
   box-shadow: 0 1px 0 0 #f48942 !important;
   border-bottom: 1px solid #f48942 !important;
+}
+
+.select-wrapper span.caret {
+  color: rgb(211, 211, 211) !important;
 }
