@@ -228,3 +228,7 @@ particlesJS('particles-js2',
 }
 
 );
+
+$(document).ready(function() {
+$('.mdb-select').materialSelect();
+});
