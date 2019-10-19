@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Halloween Signup</title>
+  <link rel="icon" href="/public/favicons/favicon.ico">
+  <link rel="stylesheet" href="/public/css/style.css">
+  <link rel="stylesheet" href="/public/css/bootstrap.css">
+  <link rel="stylesheet" href="/public/css/mdb.css">
+</head>
+<body>
+
+  <div id="particles-js"></div>
+
+
+  <div id="particles-js2"></div>
+
+  <!-- scripts -->
+  <script src="/public/js/particles.js"></script>
+  <script src="/public/js/main.js"></script>
+
+  <div class="container h-100 d-flex justify-content-center align-items-center">
+  
+    <!--Contact div-->
+    <div class="row py-5">
+  
+      <!--Entire content colomn-->
+      <div class="col-md-12">
+  
+        <!--Main card-->
+        <div class="card z-depth-5 text-halloween" id="main-card-container">
+          <div class="card-body">
+  
+            <!-- Content -->
+            <section class="my-3 mx-3">
+  
+              <!-- Heading -->
+              <h2 class="h1-responsive font-weight-bold text-center my-4">STUGO HAUNTED HOUSE SIGN-UP</h2>
+  
+              <!-- Everything else -->
+              <div class="row">
+  
+               <!-- Mobil Description -->
+                <div class="col-md-6 text-center d-md-none">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <i class="fas fa-home fa-2x text-primary"></i>
+                      <p class="mb-0">180 Gang Qian Boulevard, Nansha, Guangzhou, Guangdong, China 511458</p>
+                    </li>
+                    <li>
+                      <i class="fas fa-envelope fa-2x mt-4 text-primary"></i>
+                      <p class="mb-0">scmun@ncpachina.org</p>
+                    </li>
+                    <li>
+                      <a href="managers.html">
+                        <i class="fas fa-user-tie fa-2x mt-4 text-primary"></i>
+                        <p class="mb-0 text-body">Managers
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 27 27">
+                            <path
+                              d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                            </path>
+                          </svg>
+                        </p>
+                      </a>
+  
+                    </li>
+                    <li>
+                      <a href="managers.html">
+                        <i class="far fa-user fa-2x mt-4 text-primary"></i>
+                        <p href="officers.html" class="mb-0 text-body">Officers
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 27 27">
+                            <path
+                              d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                            </path>
+                          </svg>
+                        </p>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Status -->
+                <div class="col-md-7 mb-md-0 mb-5">
+  
+                  <form>
+                    <div class="row">
+  
+                      <!-- Name -->
+                      <div class="col-md-6">
+                        <div class="md-form mb-0">
+                          <i class="fas fa-user prefix grey-text"></i>
+                          <input type="text" id="contact-name" class="form-control">
+                          <label for="contact-name" class="">Your name</label>
+                        </div>
+                      </div>
+  
+                      <!-- Email -->
+                      <div class="col-md-6">
+                        <div class="md-form mb-0">
+                          <i class="fas fa-envelope prefix grey-text"></i>
+                          <input type="text" id="contact-email" class="form-control">
+                          <label for="contact-email" class="">Your email</label>
+                        </div>
+                      </div>
+  
+                    </div>
+  
+                    <div class="row">
+  
+                      <!-- Subject -->
+                      <div class="col-md-12">
+                        <div class="md-form mb-0">
+                          <i class="fas fa-tag prefix grey-text"></i>
+                          <input type="text" id="contact-subject" class="form-control">
+                          <label for="contact-subject" class="">Subject</label>
+                        </div>
+                      </div>
+  
+                    </div>
+  
+                    <div class="row">
+  
+                      <!-- Message -->
+                      <div class="col-md-12">
+                        <div class="md-form">
+                          <i class="fas fa-pencil-alt prefix grey-text"></i>
+                          <textarea id="contact-message" class="form-control md-textarea" rows="3"></textarea>
+                          <label for="contact-message">Your message</label>
+                        </div>
+                      </div>
+  
+                    </div>
+  
+                  </form>
+  
+                  <div class="text-center text-md-left">
+                    <button type="button" onclick="emailSendWebFunctionMailto();"
+                      class="btn btn-primary btn-md">Send</button>
+                  </div>
+  
+                </div>
+  
+                <!-- Description -->
+                <div class="col-md-5 text-center d-none d-md-block">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <i class="fas fa-home fa-2x text-primary"></i>
+                      <p class="mb-0">180 Gang Qian Boulevard, Nansha, Guangzhou, Guangdong, China 511458</p>
+                    </li>
+                    <li>
+                      <i class="fas fa-envelope fa-2x mt-4 text-primary"></i>
+                      <p class="mb-0">scmun@ncpachina.org</p>
+                    </li>
+                    <li>
+                      <a href="managers.html">
+                        <i class="fas fa-user-tie fa-2x mt-4 text-primary"></i>
+                        <p class="mb-0 text-body">Managers
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 27 27">
+                            <path
+                              d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                            </path>
+                          </svg>
+                        </p>
+                      </a>
+  
+                    </li>
+                    <li>
+                      <a href="managers.html">
+                        <i class="far fa-user fa-2x mt-4 text-primary"></i>
+                        <p href="officers.html" class="mb-0 text-body">Officers
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 27 27">
+                            <path
+                              d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z">
+                            </path>
+                          </svg>
+                        </p>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+  
+              </div>
+  
+            </section>
+  
+          </div>
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </div>
+
+
+
+
+
+
+  <h1>Signup Instructions</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ipsum, similique quos obcaecati dignissimos incidunt debitis commodi quaerat dicta quod, culpa odio unde eveniet minima quam quidem explicabo asperiores ullam nam provident nesciunt harum cupiditate fugit. Temporibus facere laboriosam quibusdam odio non recusandae possimus eligendi illo pariatur quas veniam in debitis nemo labore, error soluta inventore voluptatem?</p>
+  <h1>Signup Status</h1>
+  <ol>
+    <li>19:00-19:10 <%= T1Count %>/<%= maxPopulation %> <a class="<% if (T1Count >= maxPopulation) { %> disabled-link <%}%>" href="<% if (T1Count < maxPopulation) { %>/signup/1 <%} else {%> # <%}%>">link</a></li>
+    <li>19:10-19:20 <%= T2Count %>/<%= maxPopulation %> <a class="<% if (T2Count >= maxPopulation) { %> disabled-link <%}%>" href="<% if (T2Count < maxPopulation) { %>/signup/2 <%} else {%> # <%}%>">link</a></li>
+    <li>19:20-19:30 <%= T3Count %>/<%= maxPopulation %> <a class="<% if (T3Count >= maxPopulation) { %> disabled-link <%}%>" href="<% if (T3Count < maxPopulation) { %>/signup/3 <%} else {%> # <%}%>">link</a></li>
+    <li>19:35-19:45 <%= T4Count %>/<%= maxPopulation %> <a class="<% if (T4Count >= maxPopulation) { %> disabled-link <%}%>" href="<% if (T4Count < maxPopulation) { %>/signup/4 <%} else {%> # <%}%>">link</a></li>
+    <li>19:45-19:55 <%= T5Count %>/<%= maxPopulation %> <a class="<% if (T5Count >= maxPopulation) { %> disabled-link <%}%>" href="<% if (T5Count < maxPopulation) { %>/signup/5 <%} else {%> # <%}%>">link</a></li>
+    <li>19:55-20:05 <%= T6Count %>/<%= maxPopulation %> <a class="<% if (T6Count >= maxPopulation) { %> disabled-link <%}%>" href="<% if (T6Count < maxPopulation) { %>/signup/6 <%} else {%> # <%}%>">link</a></li>
+  </ol>
+  <a href="/data">Data Panel</a>
+
+
+
+  <!-- JQuery -->
+  <script type="text/javascript" src="/public/js/jquery-3.4.0.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="/public/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="/public/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="/public/js/mdb.min.js"></script>
+</body>
+</html>
