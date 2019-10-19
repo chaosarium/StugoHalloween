@@ -85,6 +85,10 @@ html, body {
   padding-top: 0.7rem !important;
 }
 
+.pl-2-half {
+  padding-left: 0.9rem !important;
+}
+
 .mb-half {
   margin-bottom: 0.3rem !important;
 }
